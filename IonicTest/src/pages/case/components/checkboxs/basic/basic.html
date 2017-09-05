@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Checkbox Basic</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-list-header>
+            角色
+        </ion-list-header>
+        <ion-item>
+            <ion-label>乔恩雪</ion-label>
+            <ion-checkbox checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>丹妮莉丝.坦格利安</ion-label>
+            <ion-checkbox color="dark" checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>阿里亚·斯塔克</ion-label>
+            <ion-checkbox value="cherry" disabled="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>提利昂.兰尼斯特</ion-label>
+            <ion-checkbox color="secondary"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>桑莎·斯塔克</ion-label>
+            <ion-checkbox color="danger" checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>德罗戈</ion-label>
+            <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>瑟曦.兰尼斯特</ion-label>
+            <ion-checkbox color="energized" checked="true" color="dark"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>史坦尼斯.拜拉席恩</ion-label>
+            <ion-checkbox color="royal" checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>Petyr Baelish</ion-label>
+            <ion-checkbox disabled="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>Hodor</ion-label>
+            <ion-checkbox color="dark" checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>凯特琳.斯塔克</ion-label>
+            <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>Bronn</ion-label>
+            <ion-checkbox color="royal"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+    <ion-card (tap)="tapEvent($event)">
+        <ion-item>
+            Tapped:{{tap}} times
+        </ion-item>
+    </ion-card>
+    <ion-card (press)="pressvent($event)">
+            <ion-item>
+                Pressed:{{press}} times
+            </ion-item>
+        </ion-card>
+</ion-content>

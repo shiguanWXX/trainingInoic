@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>EffectButtonMenu </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list no-lines>
+        <button ion-item *ngFor="let item of items"(click)="openButton(item)" >
+            <!-- 去掉name的[]；去掉color的‘’ -->
+          <!-- <ion-icon [name]="'logo-'+item.icon" [ngStyle]="{'color': item.color}" item-start></ion-icon> -->
+          <ion-icon [name]="item.icon" [ngStyle]="{'color': item.color}" item-start></ion-icon>
+          {{item.title}}
+        </button>
+    </ion-list>
+</ion-content>

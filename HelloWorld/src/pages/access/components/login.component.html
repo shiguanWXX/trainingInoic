@@ -1,0 +1,82 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <h2> 登录</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <ion-list>
+            <!-- .touched表示用户至少输入一次 -->
+            <ion-item [ngClass]="{'error': (!username.valid && username.touched),
+            'success':(username.valid && username.touched)}">
+                <ion-label floating>用户名</ion-label>
+                <ion-input type="text" [formControl]="username"></ion-input>
+
+            </ion-item>
+            <ion-label *ngIf="username.invalid && (username.dirty || username.touched)" class="alert-danger">
+                <div *ngIf="username.errors.required">
+                    请输入用户名
+                </div>
+                <div *ngIf="username.errors.minlength">
+                    用户名的长度不能低于4
+                </div>
+            </ion-label>
+            <ion-item [ngClass]="{'error': (!password.valid && password.touched),
+              'success':(password.valid && password.touched)}">
+                <ion-label floating>密码</ion-label>
+                <ion-input type="password" [formControl]="password"></ion-input>
+                <!-- <div *ngIf="password.valid && password.touched"> 
+                </div> -->
+            </ion-item>
+            <ion-label *ngIf="password.invalid && (password.dirty || password.touched)" class="alert-danger">
+                <div *ngIf="password.errors.required">
+                    请输入密码
+                </div>
+                <div *ngIf="password.errors.minlength">
+                    密码的长度不能低于6
+                </div>
+            </ion-label>
+        </ion-list>
+
+        <div padding>
+            <button ion-button block [disabled]="!form.valid">登录</button>
+        </div>
+    </form>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                1 of 3
+            </ion-col>
+            <ion-col col-auto>
+                Variable width content
+            </ion-col>
+            <ion-col>
+                3 of 3
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                1 of 4
+            </ion-col>
+            <ion-col>
+                2 of 4
+            </ion-col>
+            <ion-col col-auto>
+                <ion-input placeholder="Variable width input"></ion-input>
+            </ion-col>
+            <ion-col>
+                4 of 4
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-list>
+        <ion-item>
+            <!-- name的之还可以是：leaf\rose\flask 等等-->
+            <ion-icon name="body" item-start></ion-icon>
+            <ion-label>toggle</ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+        </ion-item>
+    </ion-list>
+    <button ion-button block (click)="returns()">返回</button>
+</ion-content>

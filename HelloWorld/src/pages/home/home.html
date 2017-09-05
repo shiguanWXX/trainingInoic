@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- 自定义属性指令无输入参数时只需要在标签中写上属性名即可 -->
+  <!-- <h2 myDirection>{{title}}</h2> -->
+  <!-- myDirection highColor="green"或者[highColor]="'green'" -->
+  <h2 myDirection highColor="green">{{title}}</h2>
+  <p><input type="text" [(ngModel)]="title"></p>
+  <!-- <p><button ion-button (click)="showTitle()">test</button></p> -->
+  <p><button ion-button (click)="heros.push({id:0,name:title})">增加</button></p>
+  <p><button ion-button (click)="load2()">加载</button></p>
+  <p><button ion-button (click)="login()">登录</button></p>
+  <button ion-button (click)="test()">test</button>
+  <ul>
+      <!-- [class.selected]="item.id===selectHero.id" -->
+    <li *ngFor="let item of heros;let i=index" (click)="select(item)"  [ngClass]="{selected:item===selectHero,blue:item.id>2}">
+      <p>【{{item.id}}】{{item.name}} <button (click)="title=item.name;heros.splice(i,1)">删除</button></p>
+    </li>
+  </ul>
+  <p *ngIf="selectHero.id>0">
+      Sleected:
+      <br/>
+      {{selectHero.name}}
+  </p>
+  <!-- [hero]="selectHero" -->
+  <page-home-hero [hero]="selectHero" *ngIf="selectHero.id>0">
+  </page-home-hero>
+  <p>{{now}}</p>
+  
+  <p>{{now|date:"yyyy年MM月dd日 HH:mm:ss"|myPipe}}</p>
+
+  <button ion-button (click)="saves()">saves</button>
+  <button ion-button (click)="gets()">gets</button>
+  
+</ion-content>

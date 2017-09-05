@@ -1,0 +1,18 @@
+page-home {
+   body{
+    background-color: #00E6FF;
+   } 
+li{
+    &:hover{
+        background-color: #9FF;
+    }
+    &.selected{
+        color:#FB6;
+        font-size:2em;
+    }
+    
+&.blue{
+    color:#00E6FF;
+}
+}
+}

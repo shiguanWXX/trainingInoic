@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Test</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+        <ion-fab top right edge>
+                <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+                <ion-fab-list>
+                  <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+                  <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+                  <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+                  <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+                </ion-fab-list>
+              </ion-fab>
+            
+              <ion-fab right bottom>
+                <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
+                <ion-fab-list side="left">
+                  <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+                  <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+                  <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+                  <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+                </ion-fab-list>
+              </ion-fab>
+              <ion-item>
+                  <ion-label>Start Date</ion-label>
+                  <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Start Time</ion-label>
+                  <!-- displayFormat="h:mm A" pickerFormat="h mm A"-->
+                  <ion-datetime  displayFormat="h:mm A"  ></ion-datetime>
+              </ion-item>
+              <button ion-button block (click)="loading()">loading</button>
+              <button ion-button block (click)="openMenu()">
+                  openMenu
+              </button>
+  </ion-content>

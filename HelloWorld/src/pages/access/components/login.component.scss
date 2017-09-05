@@ -1,0 +1,15 @@
+page-access-componemt{
+    ion-item {
+        &.error{
+            color: red;
+        }
+        &.success{
+            color:green;
+        }
+    }
+    
+    .alert-danger{
+        color: red;
+    }
+    
+}
